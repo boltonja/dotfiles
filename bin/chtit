@@ -1,0 +1,29 @@
+#!/bin/sh
+if [ "$TERM" != "xterm" -a "$TERM" != "xterm-color" -a "$TERM" != "screen" ]
+then
+	exit 1
+fi
+if [ "$1" = "" ]
+then
+	name=`id | sed 's/uid=[1-90]*(\(.*\)) gid.*/\1/'`
+        if [ "$FIX" = "" ]
+        then
+	   src=none
+	else
+	    src=`basename $FIX`
+        fi
+	host=`hostname | sed 's/\..*//'`
+	HPAT=`echo $HOME|sed 's:/:\\\\/:g'`
+	dir=`pwd|sed 's/^'"$HPAT"'\///'`
+	title="$name@$host($src):$dir"
+else
+	title=$1
+fi
+
+if [ "`echo -n`" = "" ]
+then
+    echo -n "]2;$title" 
+else
+    echo "]2;$title\c" 
+fi
+
