@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 if test -n "$WORK" || test ! -d "$WORK"
-	set WORK $HOME/Projects
+	set WORK $HOME/Documents/Projects
 end
 set FIX $WORK/$argv[1]
 if test x"$WORK/" = x"$FIX"
