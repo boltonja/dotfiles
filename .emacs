@@ -94,6 +94,7 @@
 			  (setq buffer-read-only nil)
 			  (c-add-style '"jillian-c-style" jillian-c-style t)
                           (setq tab-width 8)
+			  (setq-default indent-tabs-mode nil)
 			  ))
 
 (load-file "~/elisp/xcscope.el/xcscope.el")
