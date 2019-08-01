@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+if [ ! -d .git -o ! -f manifest ]
+then
+	echo "`pwd` doesn't look like a git repo"
+	exit 1
+fi
+
+cat manifest | while read f
+do
+	if [ -d ~/"$f" ]
+	then
+		rm -r ~/"$f"
+	fi
+	ln -sf `pwd`/"$f" ~/"$f"
+done

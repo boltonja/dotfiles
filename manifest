@@ -1,0 +1,7 @@
+.config/fish
+.emacs.d
+elisp
+bin
+.emacs
+.bash_profile
+.bashrc

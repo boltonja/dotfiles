@@ -1,0 +1,14 @@
+#!/bin/sh
+if [ ! -d .git ]
+then
+	echo "`pwd` doesn't look like a git repo"
+	exit 1
+fi
+
+if [ $# != 1 -o "$1" = "-h" -o ! -d "$1" ]
+then
+	echo "compare current directory to target folder"
+	echo "usage: $0 target"
+	exit 1
+fi
+find . -type f -a ! -path './.git*' -exec cmp \{\} "$1"/\{\} \;

@@ -2,7 +2,7 @@
 ###echo "fix $1:  I hope you sourced me"
 if [ "$WORK" = "" -o ! -d "$WORK" ]
 then
-WORK=$HOME/Projects
+WORK=$HOME/Documents/Projects
 fi
 FIX=$WORK/$1
 if [ "$WORK/" = "$FIX" ]
