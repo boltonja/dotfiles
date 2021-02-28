@@ -4,3 +4,7 @@ PROMPT_COMMAND='chtit; MRR=`basename ${FIX:=none}|sed s/.*\\\\///`; PS1="\u@\h (
 set -o vi
 export EDITOR="emacs -nw"
 export PATH=$PATH:~/bin
+if [ -d $HOME/.dotnet/tools ]
+then
+	export PATH=$PATH:$HOME/.dotnet/tools
+fi
