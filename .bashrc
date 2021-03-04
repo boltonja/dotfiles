@@ -8,4 +8,8 @@ if [ -d $HOME/.dotnet/tools ]
 then
 	export PATH=$PATH:$HOME/.dotnet/tools
 fi
-jera.sh
+tty -s
+if [ $? == 0 ]
+then
+	jera.sh
+fi
