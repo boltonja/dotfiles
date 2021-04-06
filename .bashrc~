@@ -13,7 +13,4 @@ if [ $? == 0 ]
 then
 	jera.sh
 fi
-if [ -f $HOME/.cargo/env ]
-then
-    source "$HOME/.cargo/env"
-fi
+source "$HOME/.cargo/env"
