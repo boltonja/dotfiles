@@ -1,3 +1,9 @@
+; For VcXSrv with WSL2
+; https://skeptric.com/emacs-buffering/
+(if (and (getenv "PATH") (string-match-p "Windows" (getenv "PATH")))
+    (setq default-frame-alist
+          (append default-frame-alist '((inhibit-double-buffering . t)))))
+
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq viper-mode t)
