@@ -1,0 +1,9 @@
+#!/bin/sh -x
+if [ -d ~/spacemacs/.emacs.d ]
+then
+	HOME=~/spacemacs emacs $*
+else
+	echo "$0: spacemacs is not installed"
+	echo "try: git clone https://github.com/syl20bnr/spacemacs ~/spacemacs/.emacs.d"
+	exit 1
+fi
