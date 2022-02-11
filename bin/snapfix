@@ -1,0 +1,3 @@
+#!/bin/sh
+apparmor_parser -r /etc/apparmor.d/*snap-confine*
+apparmor_parser -r /var/lib/snapd/apparmor/profiles/*
