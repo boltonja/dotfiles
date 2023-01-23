@@ -16,3 +16,5 @@ done
 
 mkdir -p ~/.local/share/konsole
 ln -sf `pwd`/themes/konsole/IC_Orange_PPL.colorscheme ~/.local/share/konsole/IC_Orange_PPL.colorscheme
+
+emacs --script ~/elisp/install-packages.el

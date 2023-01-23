@@ -1,0 +1,11 @@
+bindkey -v
+
+alias fix='. ~/bin/fix.sh'
+alias agent='. ~/bin/agent.sh'
+export EDITOR="emacs -nw"
+export PATH=$PATH:~/bin
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+tty -s && jera.sh
+

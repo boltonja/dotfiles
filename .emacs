@@ -4,10 +4,18 @@
     (setq default-frame-alist
           (append default-frame-alist '((inhibit-double-buffering . t)))))
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
-(setq viper-mode t)
-(require 'viper)
+
+(require 'evil)
+(evil-mode 1)
+;(setq viper-mode t)
+;(require 'viper)
+
 (setq ps-print-header nil)
 (add-hook 'text-mode-hook 'turn-on-auto-fill '(lambda () (setq buffer-read-only nil)))
 (add-hook 'text-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
@@ -103,7 +111,7 @@
 			  (setq-default indent-tabs-mode nil)
 			  ))
 
-(load-file "~/elisp/xcscope.el/xcscope.el")
+;(load-file "~/elisp/xcscope.el/xcscope.el")
 (require 'xcscope)
 (cscope-setup)
 
