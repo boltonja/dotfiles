@@ -7,6 +7,6 @@ fi
 
 cd $SRC
 
-find . \( -name "*.[ch]" -o -name "*.[ch]pp" \) -a \! -path "./builds*" > cscope.files
+find `pwd` \( -name "*.[ch]" -o -name "*.[ch]pp" \) -a \! -path "./builds*" > cscope.files
 
 cscope -Rubi cscope.files
