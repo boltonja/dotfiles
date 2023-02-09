@@ -5,3 +5,5 @@ bin
 .emacs
 .bash_profile
 .bashrc
+.screenrc
+.tmux.conf
