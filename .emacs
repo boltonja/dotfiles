@@ -11,8 +11,8 @@
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 
-(require 'evil)
-(evil-mode 1)
+;(require 'evil)
+;(evil-mode 1)
 ;(setq viper-mode t)
 ;(require 'viper)
 
@@ -20,6 +20,7 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill '(lambda () (setq buffer-read-only nil)))
 (add-hook 'text-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
 (add-hook 'c-mode-hook '(lambda () (ruler-mode 1) (line-number-mode 1 ) (setq buffer-read-only nil)))
+(add-hook 'c++-mode-hook '(lambda () (ruler-mode 1) (line-number-mode 1 ) (setq buffer-read-only nil)))
 (add-hook 'pascal-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
 (add-hook 'fortran-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
 (add-hook 'awk-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
@@ -133,3 +134,16 @@
  ;; If there is more than one, they won't work right.
  ))
 )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(modus-vivendi))
+ '(inhibit-startup-screen t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
