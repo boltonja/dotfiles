@@ -7,14 +7,14 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+(require 'magit)
+(require 'rustic)
+(require 'rust-mode)
+(require 'xcscope)
+(cscope-setup)
 
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
-
-;(require 'evil)
-;(evil-mode 1)
-;(setq viper-mode t)
-;(require 'viper)
 
 (setq ps-print-header nil)
 (add-hook 'text-mode-hook 'turn-on-auto-fill '(lambda () (setq buffer-read-only nil)))
@@ -24,32 +24,8 @@
 (add-hook 'pascal-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
 (add-hook 'fortran-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
 (add-hook 'awk-mode-hook '(lambda () (line-number-mode 1) (setq buffer-read-only nil)))
-;(add-hook 'dired-mode-hook 'viper-mode)
-;(add-hook 'fortran-mode-hook 'viper-mode)
-;(add-hook 'awk-mode-hook 'viper-mode)
-;(cond (window-system (require 'hilit19)))
-
-;Set the `mh-progs' and `mh-lib', and `mh-lib-progs' variables to the
-
-;(defvar mh-progs "/usr/bin" )
-;(defvar mh-lib "/usr/etc" )
-;(defvar mh-lib-progs "/usr/lib" )
-
 
 (put 'eval-expression 'disabled nil)
-;;(setq-default c-basic-offset 4)
-
-;;(defun my-c-mode-hook()
-;;   ; for emacs 19.32
-;;	(cond (window-system (require 'hilit19)))
-;;       (setq c-recognize-knr-p t)
-;;       (setq c-basic-offset 4)
-;;    (c-set-offset 'inclass +)
-;;(describe-variable c-basic-offset)
-;;)
-
-;; Added for S7
-
 
 (setq s7-c-style
       '((c-comment-only-line-offset . 4)
@@ -112,39 +88,13 @@
 			  (setq-default indent-tabs-mode nil)
 			  ))
 
-;(load-file "~/elisp/xcscope.el/xcscope.el")
-(require 'xcscope)
-(cscope-setup)
-
 (autoload 'cflow-mode "cflow-mode")
 (setq auto-mode-alist (append auto-mode-alist
 			      '(("\\.cflow$" . cflow-mode))))
-(cond (window-system 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-operandi))
- '(inhibit-startup-screen t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ))
-)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(modus-vivendi))
- '(inhibit-startup-screen t)
- '(package-selected-packages '(json-mode powershell xcscope evil)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages '(lsp-mode json-mode powershell)))
