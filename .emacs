@@ -4,6 +4,14 @@
     (setq default-frame-alist
           (append default-frame-alist '((inhibit-double-buffering . t)))))
 
+; mouse support for, e.g., iTerm2
+(unless window-system
+  (require 'mouse)
+  (xterm-mouse-mode t)
+  (defun track-mouse (e))
+  (setq mouse-sel-mode t)
+)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
@@ -97,4 +105,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(modus-vivendi))
- '(package-selected-packages '(lsp-mode json-mode powershell)))
+ '(package-selected-packages '(elpher lsp-mode json-mode powershell)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
