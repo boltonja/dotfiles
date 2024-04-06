@@ -9,3 +9,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 tty -s && jera.sh
 
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
