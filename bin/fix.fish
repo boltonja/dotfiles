@@ -1,6 +1,7 @@
 #!/usr/bin/env fish
+echo $WORK
 
-if test -n "$WORK" || test ! -d "$WORK"
+if ! set -q WORK || test ! -d "$WORK"
 	set WORK $HOME/Documents/Projects
 end
 set FIX $WORK/$argv[1]
