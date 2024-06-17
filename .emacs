@@ -12,6 +12,7 @@
   (setq mouse-sel-mode t)
 )
 
+(global-display-line-numbers-mode t)
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
@@ -104,6 +105,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auth-source-save-behavior nil)
  '(custom-enabled-themes '(modus-vivendi))
  '(package-selected-packages '(elpher lsp-mode json-mode powershell)))
 (custom-set-faces
