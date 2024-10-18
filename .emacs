@@ -91,11 +91,18 @@
 			(substatement-open . 0)))))
      
 (add-hook 'c-mode-common-hook '(lambda () 
-			  (setq buffer-read-only nil)
-			  (c-add-style '"jillian-c-style" jillian-c-style t)
-                          (setq tab-width 8)
-			  (setq-default indent-tabs-mode nil)
-			  ))
+				 (setq buffer-read-only nil)
+				 (c-set-style "bsd")
+				 (setq tab-width 8)
+				 (setq c-tab-always-indent t)
+				 ;(setq-default indent-tabs-mode t)
+				 ;(setq c-indent-level 4)
+				 ;(setq c-continued-statement-offset 4)
+				 ;(setq c-brace-offset -4)
+				 ;(setq c-argdecl-indent 0)
+				 ;(setq c-label-offset -4)
+			  )
+	  )
 
 (autoload 'cflow-mode "cflow-mode")
 (setq auto-mode-alist (append auto-mode-alist
