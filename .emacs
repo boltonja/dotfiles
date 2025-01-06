@@ -16,9 +16,9 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(require 'magit)
-(require 'rustic)
-(require 'rust-mode)
+;(require 'magit)
+;(require 'rustic)
+;(require 'rust-mode)
 (require 'xcscope)
 (cscope-setup)
 
